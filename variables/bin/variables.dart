@@ -63,4 +63,24 @@ Future<void> main() async {
 
   // ---- Constantes --------------------------------------------------------------------
   // ---- Fin Constantes ----------------------------------------------------------------
+
+  // ---- Variables null ----------------------------------------------------------------
+  String? puedeSerNulo =
+      "puedeSerNulo"; //? null condicional o condicinal member access
+
+  puedeSerNulo = null;
+
+  print(
+    puedeSerNulo ?? "Es nulo",
+  ); // ?? operador null aware si la variable a evaluar no es nula se imprime su valor si no lo que hay después del ??
+
+  print(
+    puedeSerNulo ??
+        (puedeSerNulo != null && !puedeSerNulo.startsWith("puede")
+            ? (puedeSerNulo.startsWith('puede') ? puedeSerNulo : "No es nulo")
+            : puedeSerNulo ?? "Valor nulo"),
+  );
+
+  print("Null assertion operator\n ${puedeSerNulo ?? 'nulo'}");
+  // ---- Fin variables null ------------------------------------------------------------
 }
